@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const daySlice = createSlice({
   name: "daySlice",
   initialState: {
-    days: "7",
+    days: "30",
   },
   reducers: {
     selectDay: (state, action) => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { baseApi } from "../../redux/apiSlice/data";
 
-//this component contains CoinExchange convert currency one to another
+// this component contains CoinExchange convert currency one to another
 const CoinExchange = () => {
   const [data, setData] = useState([]);
   const [input, setInput] = useState("");
@@ -11,7 +11,7 @@ const CoinExchange = () => {
   const [error, setError] = useState(null);
   const [unit, setUnit] = useState("");
 
-  //Fetch Exchange rate data
+  // Fetch Exchange rate data
   async function exchangefetchData() {
     try {
       const response = await baseApi.get("exchange_rates");
@@ -57,8 +57,6 @@ const CoinExchange = () => {
       const sellRate = sellSelect.rate;
       const buyRate = buySelect.rate;
       const buyUnit = buySelect.unit;
-      // console.log(sellRate);
-      // console.log(buyRate);
       const resultValue = (input * buyRate) / sellRate;
       setResult(resultValue.toFixed(2));
       setUnit(buyUnit);
@@ -72,39 +70,41 @@ const CoinExchange = () => {
       <div className="flex justify-evenly items-center pt-7">
         <div className="flex flex-col gap-2">
           <div className="flex justify-center items-center gap-2">
-            <span className=" text-red-400 font-semibold">Sell</span>
+            <span className="text-red-400 font-semibold">Sell</span>
             <div>
-              {
-                <select
-                  onChange={(e) => setSell(e.target.value)}
-                  className="bg-gray-300 rounded-md text-sm w-[150px] h-8"
-                >
-                  <option selected disabled hidden>
-                    Select a coin
+              <select
+                value={sell}
+                onChange={(e) => setSell(e.target.value)}
+                className="bg-gray-300 rounded-md text-sm w-[150px] h-8"
+              >
+                <option value="" disabled hidden>
+                  Select a coin
+                </option>
+                {data.map((item, index) => (
+                  <option key={index} value={item.value}>
+                    {item.value}
                   </option>
-                  {data.map((item, index) => {
-                    return <option key={index}>{item.value}</option>;
-                  })}
-                </select>
-              }
+                ))}
+              </select>
             </div>
           </div>
           <div className="flex justify-center items-center gap-2">
-            <span className=" text-green-400 font-semibold">Buy</span>
+            <span className="text-green-400 font-semibold">Buy</span>
             <div>
-              {
-                <select
-                  onChange={(e) => setBuy(e.target.value)}
-                  className="bg-gray-300 rounded-md text-sm w-[150px] h-8"
-                >
-                  <option selected disabled hidden>
-                    Select a coin
+              <select
+                value={buy}
+                onChange={(e) => setBuy(e.target.value)}
+                className="bg-gray-300 rounded-md text-sm w-[150px] h-8"
+              >
+                <option value="" disabled hidden>
+                  Select a coin
+                </option>
+                {data.map((item, index) => (
+                  <option key={index} value={item.value}>
+                    {item.value}
                   </option>
-                  {data.map((item, index) => {
-                    return <option key={index}>{item.value}</option>;
-                  })}
-                </select>
-              }
+                ))}
+              </select>
             </div>
           </div>
         </div>
