@@ -20,6 +20,7 @@ Library used in this project:-
 7-tailwind css
 
 Demo link:-
+https://cryptocurrency-dash-board.netlify.app/
 
 How to Contribute:-
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.you are more than welcome to open an issue! Do ⭐ this project!
