@@ -1,5 +1,5 @@
-import React from "react";
 import Navbar from "./components/navbar/Navbar";
+import Main from "./components/main/Main";
 
 function App() {
   return (
@@ -7,6 +7,10 @@ function App() {
     <div className="bg-gray-300 h-full">
       <div>
         <Navbar />
+      </div>
+      {/*This is main body of crypto currency dashboard*/}
+      <div>
+        <Main />
       </div>
     </div>
   );
