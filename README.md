@@ -1,5 +1,5 @@
 Project Name:-
-cryptocurrency dashboard
+Cryptocurrency Dashboard
 
 🚀 About This Project:-
 Cryptocurrency dashboard is an application that uses the coinGecko API and displays the data and charts.This was a capstone project built during AlmaBetter training.
